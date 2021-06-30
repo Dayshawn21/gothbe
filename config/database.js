@@ -1,14 +1,14 @@
 module.exports = ({ env }) => ({
-  defaultConnection: 'default',
+  defaultConnection: "default",
   connections: {
     default: {
-      connector: 'bookshelf',
+      connector: "mongoose",
       settings: {
-        client: 'sqlite',
-        filename: env('DATABASE_FILENAME', '.tmp/data.db'),
+        uri: "mongodb+srv://dayshawn:dayday@cluster0.mkolz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
       },
       options: {
-        useNullAsDefault: true,
+        authenticationDatabase: env("AUTHENTICATION_DATABASE", null),
+        ssl: true,
       },
     },
   },
